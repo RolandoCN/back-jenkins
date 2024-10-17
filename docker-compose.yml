@@ -2,7 +2,7 @@ version: '3.8'
 services:
   backend:
     build:
-      context: ./  # Ruta al Dockerfile del backend
+      context: .  # Ruta al Dockerfile del backend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"  # Exponer el puerto del backend en la máquina host
