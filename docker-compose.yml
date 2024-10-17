@@ -22,8 +22,6 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=backend_jenkins
-    deploy:
-      replicas: 1
     ports:
       - "5433:5432"
     volumes:
@@ -31,6 +29,8 @@ services:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - my-network
+    deploy:
+      replicas: 2  # Especifica el número de réplicas
 
 networks:
   my-network:
