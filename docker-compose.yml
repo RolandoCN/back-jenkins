@@ -22,6 +22,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=backend_jenkins
+    deploy:
+      replicas: 1
     ports:
       - "5433:5432"
     volumes:
