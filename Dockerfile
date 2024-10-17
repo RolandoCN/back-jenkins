@@ -1,7 +1,14 @@
-# Etapa 1: Construcción de la aplicación
-FROM node:18 AS build
+# Usa una imagen base que tenga Docker
+FROM docker:19.03.12
 
-# Establecer el directorio de trabajo en el contenedor
+# Instalar Node.js
+RUN apk add --no-cache nodejs npm
+
+# Instalar docker-compose
+RUN apk add --no-cache python3 py3-pip && \
+    pip3 install docker-compose
+
+# Crear el directorio de trabajo
 WORKDIR /app
 
 # Copiar el archivo de configuración package.json y package-lock.json
