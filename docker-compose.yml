@@ -4,6 +4,7 @@ services:
     build:
       context: .  # Ruta al Dockerfile del backend
       dockerfile: Dockerfile
+    image: backend-image
     ports:
       - "3000:3000"  # Exponer el puerto del backend en la máquina host
     networks:
